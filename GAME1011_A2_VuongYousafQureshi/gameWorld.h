@@ -24,6 +24,7 @@ public:
 	void removeFrontRoom();
 
 	// Getters
+	Room* getFirstRoom() { return roomArray[front]; }
 	int getFront() const { return front; }
 	int getRear() const { return rear; }
  };

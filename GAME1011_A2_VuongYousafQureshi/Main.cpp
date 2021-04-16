@@ -11,35 +11,31 @@
 #include "Item.h"
 using namespace std;
 
+int processCommands();
 void commandHelp();
 void movingLine();
 void advance();
 
 int main()
 {
-	string command;			// This will hold the command the user wants to carry out
-	string temp, temp2;		// These will be used to load the data from the .txt files into the items and rooms respectively
+	string command;				// This will hold the command the user wants to carry out
+	string temp, temp2;			// These will be used to load the data from the .txt files into the items and rooms respectively
+	bool continueGame = false;	// This will control whether the player can advance after the commands
 
-	Item* items;			// This will hold all of the items found in game
-	int numItems = 0;		// This will keep track of the number of items
-
-	Room* rooms;			// This will hold all of the rooms found in game
-	int numRooms = 0;		// This will keep track of the number of rooms
-	int currentRoom = 0;	// This will keep track of current room that the player is in
+	Item* items;				// This will hold all of the items found in game
+	int numItems = 0;			// This will keep track of the number of items
 	
-	gameWorld roomHandler;	// This controls, and holds the rooms found in the game
-	ifstream fileReader;	// This will read in the data from the item and 
+	gameWorld roomHandler;		// This controls, and holds the rooms found in the game
+	ifstream fileReader;		// This will read in the data from the item and 
 
-	items = new Item[5];	// 
-	rooms = new Room[5];	// 
+	items = new Item[5];		// 
 
 	// This will load the information for the items from the Item.txt file
 	fileReader.open("Items.txt");
 	if (fileReader.is_open()) {
 		for (int x = 0; getline(fileReader, temp2); x++) {
-			if (x % 2 == 0) {
+			if (x % 2 == 0) 
 				temp = temp2; // This stores the name of the item so it could be used to create the item later
-			}
 			else {
 				items[numItems] = Item(temp, temp2); // This uses both temp strings to create and store the items in the array
 				numItems++;
@@ -56,13 +52,10 @@ int main()
 	fileReader.open("Rooms.txt");
 	if (fileReader.is_open()) {
 		for (int x = 0; getline(fileReader, temp2); x++) {
-			if (x % 2 == 0) {
+			if (x % 2 == 0)
 				temp = temp2;
-			}
-			else {
-				rooms[numRooms] = Room(temp, temp2); 
-				numRooms++;
-			}
+			else 
+				roomHandler.addRoom(new Room(temp, temp2)); 
 		}
 		fileReader.close();
 	}
@@ -70,9 +63,6 @@ int main()
 		cout << "Rooms.txt could not be found" << endl;
 		exit(1);
 	}
-	
-	commandHelp();
-	advance();
 	
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 13); cout << "   __, _______         _______ ,__        " << endl;
 	cout << "  / __. ==---/ "; SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED | FOREGROUND_GREEN); cout << "*"; SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11); cout << " THE "; SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED | FOREGROUND_GREEN); cout << "*"; SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 13); cout << " \\---== .__  \\    " << endl;
@@ -83,13 +73,38 @@ int main()
 	cout << "Welcome to THE YOUSAF FAMILY" << endl;
 	advance();
 
+	commandHelp();
+	advance();
+	
+	// This is where the main gameplay loop will
 
-	delete[] rooms;
+//------------------------First Room------------------------------//
+	cout << roomHandler.getFirstRoom()->getOpening() << endl << endl;
+
+	cout << "Enter:   Sit - Listen to Mr. Cannoli and sit down " << endl;
+	cout << "       Stand - Stay standing up" << endl;
+
+	while() {
+		if ()
+	}
+
+
+
+
+
+
+
+
+	
 	delete[] items;
 	return 0;
 }
 // SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 13);
 // SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED | FOREGROUND_GREEN);
+
+int processCommands() {
+	
+}
 
 // This is to format the help screen
 void commandHelp () {

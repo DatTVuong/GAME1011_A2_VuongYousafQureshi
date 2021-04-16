@@ -1,7 +1,7 @@
 #include "gameWorld.h"
 
 gameWorld::gameWorld() {
-	this->roomCapacity = 3;
+	this->roomCapacity = 5;
 	roomArray = new Room*[this->roomCapacity];
 
 	front = rear = -1;
