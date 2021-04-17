@@ -5,4 +5,24 @@ The baseball bat is worn, it's clear that it's seen it's fair share of action. Y
 Pocket knife
 A standard pocket knife
 Glasses
-One lense has fallen out completely, while only half of the other one remains. Both temples are bent a bit, but they could still be used to pick a lock
+One lense has fallen out completely, while only half of the other one remains. Both temples are bent a bit, but they could still be used to pick a lock.
+Pebble 
+Small pubble from outside of the mafia compound.
+fireAlarm
+Fire alarm that is connected to multiple loud buzzers around Mr Cannoli compound. 
+Weapon 
+( weapon that you choose)
+Small Statue Alter
+Statue of the patron saint of the Cannoli Family. 
+Cigar Box
+A small wooden ornate Cuban cigar box.
+Large Self-Portrait
+A large self-portrait that seems that displays the mod boss in all his glory. 
+ 
+
+
+
+
+ 
+
+
